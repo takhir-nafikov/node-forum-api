@@ -307,7 +307,7 @@ status: 201
 }
 ```
 
-### Get theme
+### Get message
 Send GET request on `/themes/<id theme>/messages/<id message>`.
 
 **response :**
@@ -317,13 +317,15 @@ status: 200
     success: true,
     message: {
                 created: <Date>
-                author: <id>,
-                theme: <id>
+                author: {
+                            name: <name>
+                        },
+                theme: <id>,
                 text: <text>
            }
 }
 ```
-### Update theme
+### Update message
 Send PUT reqiuest on `/themes/<id theme>/messages/<id message>`.
 Need indicate token in headers. Also you need to be the author of this message.
 
@@ -347,7 +349,7 @@ status: 403
     message: 'You must own a message in order to edit it'
 }
 ```
-### Delete theme
+### Delete message
 Send DELETE reqiuest on `/themes/<id theme>/messages/<id message>`.
 Need indicate token in headers. Also you need to be the author of this message.
 
